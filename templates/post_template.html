@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#121212" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <title>{{ title }} - SiputBiru's Notes</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --link-color: #D3F6FF;
+            --code-bg: #1e1e1e;
+            --code-text: #e8e8e8;
+            --border-color: #333333;
+            --muted-text: #888888;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 680px; 
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        p { margin-bottom: 1.2rem; }
+        
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* --- Post Headers --- */
+        .post-title { margin-bottom: 0; }
+        .post-date {
+            color: var(--muted-text); 
+            font-size: 0.9em; 
+            margin-top: 0.2rem; 
+            margin-bottom: 2rem;
+        }
+
+        /* --- Code Block Styling --- */
+        pre {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "Fira Code", "Fira Mono", Consolas, "Courier New", monospace;
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        pre code { padding: 0; background-color: transparent; border-radius: 0; }
+
+        /* --- Media --- */
+        main img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px; 
+            display: block; 
+            margin: 1rem auto;
+        }
+
+        /* --- Sidenotes --- */
+        input.margin-toggle { display: none; }
+
+        /* The clickable number in the main text */
+        .sidenote-number-ref { 
+            cursor: pointer; 
+            color: var(--link-color); 
+            vertical-align: super; 
+            font-size: 0.8em; 
+            padding: 0 0.1em;
+            pointer-events: none;
+            -webkit-tap-highlight-color: transparent; 
+            user-select: none;
+        }
+        .sidenote-number-ref:hover { text-decoration: underline; }
+
+        /* The static number inside the margin note */
+        .sidenote-number-def {
+            color: var(--link-color); 
+            cursor: pointer; 
+            font-weight: 600;
+            vertical-align: super; 
+            font-size: 0.75em; 
+            pointer-events: none;
+            padding-right: 0.1em;
+        }
+
+        .sidenote {
+            float: right;
+            clear: right;
+            margin-right: -45%; 
+            width: 40%;
+            margin-top: 0.3rem;
+            margin-bottom: 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: var(--muted-text);
+        }
+
+        @media (max-width: 1200px) {
+            .sidenote-number-ref {
+                pointer-events: auto;
+            }
+
+            .sidenote {
+                display: none; 
+                float: left;
+                clear: both;
+                width: 95%;
+                margin: 1rem 0;
+                padding-left: 1rem;
+                border-left: 2px solid var(--border-color);
+            }
+            
+            input.margin-toggle:checked + .sidenote {
+                display: block;
+            }
+        }
+
+        /* --- Rules & Callouts --- */
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 2.5rem 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--border-color);
+            margin: 1.5rem 0;
+            padding-left: 1rem;
+            color: var(--muted-text);
+            font-style: italic;
+        }
+
+        /* --- Callouts Base --- */
+        .callout {
+            border-left: 4px solid var(--link-color);
+            background-color: rgba(211, 246, 255, 0.05); 
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .callout-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--link-color); /* Default color */
+        }
+        
+        /* --- Note (Default) --- */
+        .callout.callout-note {
+            border-left-color: var(--link-color);
+            background-color: rgba(211, 246, 255, 0.05);
+        }
+        /* Title stays var(--link-color) */
+        
+        /* --- Warning --- */
+        .callout.callout-warn {
+            border-left-color: #ffb86c; 
+            background-color: rgba(255, 184, 108, 0.05);
+        }
+        .callout-warn .callout-title { color: #ffb86c; } /* Changes title to match border */
+        
+        /* --- Tip --- */
+        .callout.callout-tip {
+            border-left-color: #8fffd4; 
+            background-color: rgba(143, 255, 212, 0.05);
+        }
+        .callout-tip .callout-title { color: #8fffd4; }
+        
+        /* --- Important --- */
+        .callout.callout-important {
+            border-left-color: #bda1ff; 
+            background-color: rgba(189, 161, 255, 0.05);
+        }
+        .callout-important .callout-title { color: #bda1ff; }
+        
+        /* --- Caution --- */
+        .callout.callout-caution {
+            border-left-color: #ff6969; 
+            background-color: rgba(255, 105, 105, 0.05);
+        }
+        .callout-caution .callout-title { color: #ff6969; }
+
+        ul, ol {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        ul + ol, ol + ul, ul + ul, ol + ol {
+            margin-top: -0.5rem; 
+        }
+
+        /* --- Tables --- */
+        .table-wrapper {
+            overflow-x: auto; /* Allows horizontal scrolling on mobile! */
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(211, 246, 255, 0.05);
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+    </style>
+</head>
+  <body>
+    <header>
+        <nav style="margin-bottom: 2rem;">
+            <a href="{{ root_dir }}">← Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="post-title">{{ title }}</h1>
+        <p class="post-date">{{ date }}</p>
+        {{ content }}
+    </main>
+
+    <footer style="margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.8em; color: var(--muted-text);">
+        Built with <a href="https://github.com/SiputBiru/cangkang" target="_blank" rel="noopener noreferrer">Cangkang</a>.<br>
+        © 2026-present siputbiru
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

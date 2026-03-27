@@ -5,7 +5,7 @@ WORKDIR /usr/src/cangkang
 COPY . .
 
 RUN cargo build --manifest-path ssg/Cargo.toml --release \
-  && ./engine/target/release/cangkang
+  && ./ssg/target/release/cangkang
 
 FROM nginx:1.28.3-alpine
 
