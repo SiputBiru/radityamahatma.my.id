@@ -15,6 +15,8 @@
             --muted-text: #888888;
         }
 
+        html { font-size: 100%; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -22,7 +24,7 @@
             background-color: var(--bg-color);
             max-width: 680px; 
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2rem 1.5rem; /* Slightly wider side padding on desktop */
         }
 
         h1 {
@@ -31,6 +33,7 @@
             margin-bottom: 2rem;
             font-weight: 600;
             color: #ffffff;
+            font-size: 2.2rem;
         }
 
         a { color: var(--link-color); text-decoration: none; }
@@ -52,6 +55,21 @@
             font-weight: 600;
             border-bottom: 1px dashed var(--muted-text);
             text-decoration: none;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                margin-top: 1rem;
+            }
+            ul.index-list li {
+                font-size: 1rem;
+                padding: 0.3rem 0;
+            }
         }
     </style>
 </head>

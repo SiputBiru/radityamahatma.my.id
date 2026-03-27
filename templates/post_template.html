@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCT<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,8 @@
             --muted-text: #888888;
         }
 
+        html { font-size: 100%; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -25,7 +27,7 @@
             background-color: var(--bg-color);
             max-width: 680px; 
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2rem 1.5rem;
         }
 
         h1, h2, h3 {
@@ -35,6 +37,10 @@
             font-weight: 600;
             color: #ffffff;
         }
+
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
+        h3 { font-size: 1.4rem; }
 
         p { margin-bottom: 1.2rem; }
         
@@ -57,7 +63,7 @@
         pre {
             background-color: var(--code-bg);
             padding: 1rem;
-            overflow-x: auto;
+            overflow-x: auto; /* Handles horizontal scrolling perfectly */
             border-radius: 6px;
             border: 1px solid var(--border-color);
             font-size: 0.9em;
@@ -86,7 +92,6 @@
         /* --- Sidenotes --- */
         input.margin-toggle { display: none; }
 
-        /* The clickable number in the main text */
         .sidenote-number-ref { 
             cursor: pointer; 
             color: var(--link-color); 
@@ -99,7 +104,6 @@
         }
         .sidenote-number-ref:hover { text-decoration: underline; }
 
-        /* The static number inside the margin note */
         .sidenote-number-def {
             color: var(--link-color); 
             cursor: pointer; 
@@ -123,10 +127,7 @@
         }
 
         @media (max-width: 1200px) {
-            .sidenote-number-ref {
-                pointer-events: auto;
-            }
-
+            .sidenote-number-ref { pointer-events: auto; }
             .sidenote {
                 display: none; 
                 float: left;
@@ -136,10 +137,7 @@
                 padding-left: 1rem;
                 border-left: 2px solid var(--border-color);
             }
-            
-            input.margin-toggle:checked + .sidenote {
-                display: block;
-            }
+            input.margin-toggle:checked + .sidenote { display: block; }
         }
 
         /* --- Rules & Callouts --- */
@@ -172,62 +170,28 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--link-color); /* Default color */
+            color: var(--link-color);
         }
         
-        /* --- Note (Default) --- */
-        .callout.callout-note {
-            border-left-color: var(--link-color);
-            background-color: rgba(211, 246, 255, 0.05);
-        }
-        /* Title stays var(--link-color) */
-        
-        /* --- Warning --- */
-        .callout.callout-warn {
-            border-left-color: #ffb86c; 
-            background-color: rgba(255, 184, 108, 0.05);
-        }
-        .callout-warn .callout-title { color: #ffb86c; } /* Changes title to match border */
-        
-        /* --- Tip --- */
-        .callout.callout-tip {
-            border-left-color: #8fffd4; 
-            background-color: rgba(143, 255, 212, 0.05);
-        }
+        .callout.callout-note { border-left-color: var(--link-color); background-color: rgba(211, 246, 255, 0.05); }
+        .callout.callout-warn { border-left-color: #ffb86c; background-color: rgba(255, 184, 108, 0.05); }
+        .callout-warn .callout-title { color: #ffb86c; }
+        .callout.callout-tip { border-left-color: #8fffd4; background-color: rgba(143, 255, 212, 0.05); }
         .callout-tip .callout-title { color: #8fffd4; }
-        
-        /* --- Important --- */
-        .callout.callout-important {
-            border-left-color: #bda1ff; 
-            background-color: rgba(189, 161, 255, 0.05);
-        }
+        .callout.callout-important { border-left-color: #bda1ff; background-color: rgba(189, 161, 255, 0.05); }
         .callout-important .callout-title { color: #bda1ff; }
-        
-        /* --- Caution --- */
-        .callout.callout-caution {
-            border-left-color: #ff6969; 
-            background-color: rgba(255, 105, 105, 0.05);
-        }
+        .callout.callout-caution { border-left-color: #ff6969; background-color: rgba(255, 105, 105, 0.05); }
         .callout-caution .callout-title { color: #ff6969; }
 
-        ul, ol {
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-        }
-        
-        li {
-            margin-bottom: 0.3rem;
-        }
-
-        ul + ol, ol + ul, ul + ul, ol + ol {
-            margin-top: -0.5rem; 
-        }
+        ul, ol { margin-top: 0.5rem; margin-bottom: 0.5rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.3rem; }
+        ul + ol, ol + ul, ul + ul, ol + ol { margin-top: -0.5rem; }
 
         /* --- Tables --- */
         .table-wrapper {
-            overflow-x: auto; /* Allows horizontal scrolling on mobile! */
+            overflow-x: auto;
             margin: 2rem 0;
+            -webkit-overflow-scrolling: touch;
         }
 
         table {
@@ -236,21 +200,23 @@
             font-size: 0.95em;
         }
 
-        th, td {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-color);
-        }
+        th, td { padding: 0.75rem 1rem; border: 1px solid var(--border-color); }
+        th { background-color: rgba(211, 246, 255, 0.05); color: var(--text-color); font-weight: 600; }
+        tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
 
-        th {
-            background-color: rgba(211, 246, 255, 0.05);
-            color: var(--text-color);
-            font-weight: 600;
+        /* MOBILE THINGS */
+        @media (max-width: 600px) {
+            body { padding: 1.5rem 1rem; }
+            h1.post-title { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.25rem; }
+            
+            .sidenote { 
+                width: 100%; 
+                margin-left: 0;
+                padding-left: 0.8rem; 
+            }
         }
-
-        tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.02);
-        }
-
     </style>
 </head>
   <body>
