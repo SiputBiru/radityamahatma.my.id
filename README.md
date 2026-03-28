@@ -9,7 +9,7 @@ git submodule update --remote --merge
 ## running the things
 
 ```bash
-cargo run --manifest-path engine/Cargo.toml --release
+cargo run --manifest-path ssg/Cargo.toml --release
 ```
 
 running with docker compose:
