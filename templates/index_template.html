@@ -37,10 +37,21 @@
 
         html { font-size: 100%; }
 
+        p, d1, ol, ul {
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+        }
+
+        p {
+          text-align: justify;
+          text-align-last: left;
+          hyphens: auto;
+        }
+
         body {
             /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
-            font-family: "Junicode", Georgia, "Times New Roman", serif;
-            line-height: 1.6;
+            font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Times New Roman", serif;
+            line-height: 1.5rem;
             color: var(--text-color);
             background-color: var(--bg-color);
             max-width: 680px; 
@@ -53,9 +64,19 @@
             line-height: 1.2;
             margin-top: 2rem;
             margin-bottom: 2rem;
-            font-weight: 600;
+            font-weight: 700;
             color: #ffffff;
             font-size: 2.2rem;
+        }
+
+        h2 {
+            font-family: "Junicode", Georgia, "Times New Roman", serif;
+            line-height: 1.1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--link-color);
+            font-size: 1.8rem;
         }
 
         a { color: var(--link-color); text-decoration: none; }

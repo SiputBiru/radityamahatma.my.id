@@ -40,10 +40,16 @@
 
         html { font-size: 100%; }
 
+        p, d1, ol, ul {
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+        }
+
         body {
             /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
-            font-family: "Junicode", Georgia, "Times New Roman", serif;
-            line-height: 1.6;
+            /* font-family: "Junicode", Georgia, "Times New Roman", serif; */
+            font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Times New Roman", sans-serif;
+            line-height: 1.5;
             color: var(--text-color);
             background-color: var(--bg-color);
             max-width: 680px; 
@@ -56,7 +62,7 @@
             line-height: 1.2;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            font-weight: 600;
+            font-weight: 800;
             color: #ffffff;
         }
 
@@ -64,7 +70,12 @@
         h2 { font-size: 1.8rem; }
         h3 { font-size: 1.4rem; }
 
-        p { margin-bottom: 1.2rem; }
+        p { 
+          margin-bottom: 1.2rem; 
+          text-align: justify;
+          text-align-last: left;
+          hyphens: auto;
+        }
         
         a { color: var(--link-color); text-decoration: none; }
         a:hover { text-decoration: underline; }
@@ -179,6 +190,7 @@
 
         /* --- Callouts Base --- */
         .callout {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             border-left: 4px solid var(--link-color);
             background-color: rgba(211, 246, 255, 0.05); 
             padding: 1rem;
