@@ -3,7 +3,8 @@
     "title": "Recreating the SSG from Scratch",
     "date": "2026-03-28",
     "description": "Why I built my own Static Site Generator instead of using modern frameworks.",
-    "keywords": "Recreational Programming, Rust, custom SSG, Raditya Mahatma Ghosi, SiputBiru"
+    "keywords": "Recreational Programming, Rust, custom SSG, Raditya Mahatma Ghosi, SiputBiru",
+    "draft": true
 }
 ---
 
