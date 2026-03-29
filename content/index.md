@@ -1,6 +1,8 @@
 ---
 {
-  "title": "SiputBiru Notes"
+  "title": "SiputBiru Notes",
+  "description": "Personal digital notebook of Raditya Mahatma (SiputBiru). Exploring graphics programming, systems development, and Recreational Programming stuff.",
+  "keywords": "graphics programming, systems programming, game engine, bare-metal, custom SSG, Raditya Mahatma Ghosi, SiputBiru"
 }
 ---
 

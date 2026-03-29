@@ -2,8 +2,10 @@
 {
     "title": "A New Beginning",
     "date": "2026-03-27",
-    "description": "Why I started this blog, and a quick test of the engine."
-    "pinned": true
+    "description": "Why I started this blog, and a quick test of the engine.",
+    "keywords": "A new Beginning, a new start blog, Raditya Mahatma Ghosi, SiputBiru",
+    "pinned": true,
+    "draft": false
 }
 ---
 
