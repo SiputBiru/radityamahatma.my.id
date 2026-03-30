@@ -31,7 +31,19 @@ Image from the internet:
 Image from local storage:
 ![cat-2]({{ root_dir }}images/cat.jpeg)
 
+I get all of the sample cat image from [placecats.com](https://placecats.com)
+
+### CodeBlock
+
 It also needs to handle inline code like `let x = 10;` flawlessly without breaking the surrounding paragraph.
+
+full codeblock things:
+
+```Typescript
+console.log("Hello From Cangkang!");
+```
+
+### Callout
 
 > [!NOTE]  
 > Highlights information that users should take into account, even when skimming.

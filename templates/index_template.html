@@ -9,11 +9,10 @@
     <link rel="icon" type="image/svg+xml" href="{{ root_dir }}images/favicon.svg">
     <title>{{ title }}</title>
     <style>
-
         /* FONTS THINGS */
         @font-face {
             font-family: 'Junicode';
-            src: url('{{ root_dir }}fonts/JunicodeVF-Roman.woff2') format('woff2');
+            src: url('./fonts/JunicodeVF-Roman.woff2') format('woff2');
             font-weight: 300 700;
             font-style: normal;
             font-display: swap;
@@ -21,7 +20,7 @@
         
         @font-face {
             font-family: 'Junicode';
-            src: url('{{ root_dir }}fonts/JunicodeVF-Italic.woff2') format('woff2');
+            src: url('./fonts/JunicodeVF-Italic.woff2') format('woff2');
             font-weight: 300 700;
             font-style: italic;
             font-display: swap;
@@ -73,7 +72,7 @@
             font-family: "Junicode", Georgia, "Times New Roman", serif;
             line-height: 1.1rem;
             margin-top: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             font-weight: 600;
             color: var(--link-color);
             font-size: 1.8rem;
@@ -114,11 +113,19 @@
                 padding: 0.3rem 0;
             }
         }
+    
     </style>
 </head>
   <body>
     <main>
         <h1>{{ title }}</h1>
+        <h2>Contact Info:</h2>
+        <table class="gbt2">
+          <tbody>
+          	<tr><td>  Email:</td><td><a href="#">radityamahatma23 <em>[at]</em> gmail <em>[dot]</em> com</a></td></tr>
+          	<tr><td> GitHub:</td><td><a href="https:////github.com/siputbiru" target="_blank" rel="noopener noreferrer" >github.com/siputbiru</a></td></tr>
+          </tbody>
+        </table>
         {{ content }}
     </main>
 
