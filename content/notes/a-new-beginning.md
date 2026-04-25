@@ -88,3 +88,37 @@ Table:
 [^1]: The very first journey or trip made by a ship, boat, or sometimes an aircraft after its construction and testing. It traditionally represents a new beginning. [source](https://dictionary.cambridge.org/dictionary/english/maiden-voyage)
 
 [^2]: This is the footnote text! Cangkang grabs this text and turns it into a beautiful, interactive margin note so it won't clutter the main paragraph.
+
+### Testing Code Dropdowns
+
+This is a regular code block:
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+This is a dropdown code block with a title:
+
++++rust [Main Function]
+fn main() {
+    println!("Hello from the dropdown!");
+}
++++
+
+This is a dropdown code block without a title:
+
++++javascript
+console.log("No title here");
++++
+
+This is a dropdown code block with multiple +++ inside (it should handle it):
+
++++++text [Nested Plus Test]
+Some text
+++++
+More pluses
+++++
+Back to three
++++++
