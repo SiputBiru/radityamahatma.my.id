@@ -17,7 +17,7 @@ This blog is my anchor. It is a repository of my past ideas and technical explor
 
 I am hosting these notes on a custom Static Site Generator I built entirely from scratch in Rust (I will write a dedicated post about *how* and *why* I built that later). But since this is the maiden voyage[^1], I need to make sure the engine can actually render my notes properly.
 
-Let's run it through the gauntlet.
+Let's run it through some tests.
 
 ## Things that need to work perfectly
 
