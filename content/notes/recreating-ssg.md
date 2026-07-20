@@ -69,7 +69,7 @@ really simple right?
 
 ### Handling Error with style
 
-To keep our code clean, we define a `CangkangError` enum. This groups all possible failures—from missing files to bad Markdown syntax—into one type-safe structure.
+To keep our code clean, we define a `CangkangError` enum. it will handle almost error that can be happen in cangkang.
 
 the `CangkangError` enum will just like this:
 
